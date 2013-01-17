@@ -1,6 +1,6 @@
 Zippopotamus PHP Library
 ================================
-This is a library to abstract the Zippopotamus API addEvent method
+A library to abstract the Zippopotamus API
 
 Installation
 ------------
