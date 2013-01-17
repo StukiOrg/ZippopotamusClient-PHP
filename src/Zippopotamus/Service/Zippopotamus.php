@@ -23,8 +23,7 @@ final class Zippopotamus
         $http->setHeaders($headers);
 
         $http->setUri('http://api.zippopotam.us/' . urlencode($countryCode) . '/' . urlencode($postalCode));
-        $http->setMethod('POST');
-        $http->getRequest()->setContent(Json::encode($parameters));
+        $http->setMethod('GET');
 
         $response = $http->send();
         $json = Json::decode($response->getBody());
@@ -46,8 +45,7 @@ final class Zippopotamus
             . urlencode($stateCode) . '/'
             . urlencode($city)
             );
-        $http->setMethod('POST');
-        $http->getRequest()->setContent(Json::encode($parameters));
+        $http->setMethod('GET');
 
         $response = $http->send();
         $json = Json::decode($response->getBody());
@@ -65,8 +63,7 @@ final class Zippopotamus
         $http->setHeaders($headers);
 
         $http->setUri('http://api.zippopotam.us/nearby/' . urlencode($countryCode) . '/' . urlencode($postalCode));
-        $http->setMethod('POST');
-        $http->getRequest()->setContent(Json::encode($parameters));
+        $http->setMethod('GET');
 
         $response = $http->send();
         $json = Json::decode($response->getBody());
