@@ -21,7 +21,7 @@ Use
 ```php
 use Zippopotamus\Service\Zippopotamus;
 
-$result = Zippopotamus::postalCode($countryCode, $postalCode);
+$result = Zippopotamus::code($countryCode, $postalCode);
 
 $result = Zippopotamus::place($countryCode, $state, $city);
 
