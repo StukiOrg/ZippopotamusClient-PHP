@@ -1,0 +1,29 @@
+{
+    "name": "zippopotamus/zippopotamus",
+    "description": "A PHP library for Zippopotam.us API",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "zipcode",
+        "city",
+        "state",
+        "country"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*,!=2.0.6"
+    },
+    "homepage": "http://www.zippopotam.us",
+    "authors": [
+        {
+            "name": "Tom Anderson",
+            "email": "tom.h.anderson@gmail.com",
+            "homepage": "http://db.etree.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Zippopotamus": "src/"
+        }
+    }
+}
