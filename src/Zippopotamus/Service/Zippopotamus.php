@@ -2,7 +2,7 @@
 /**
  * Zippopotam.us PHP Library
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 namespace Zippopotamus\Service;
@@ -13,6 +13,8 @@ use Zend\Json\Json;
 
 final class Zippopotamus
 {
+    public static $apiUrl = 'http://api.zippopotam.us/';
+
     static public function code($countryCode, $postalCode)
     {
         $http = new Client();
@@ -22,11 +24,11 @@ final class Zippopotamus
         $headers->addHeaderLine('Content-Type', 'application/json');
         $http->setHeaders($headers);
 
-        $http->setUri('http://api.zippopotam.us/' . urlencode($countryCode) . '/' . urlencode($postalCode));
+        $http->setUri(self::$apiUrl . urlencode($countryCode) . '/' . urlencode($postalCode));
         $http->setMethod('GET');
 
         $response = $http->send();
-        $json = Json::decode($response->getBody());
+        $json     = Json::decode($response->getBody());
 
         return $json;
     }
@@ -40,15 +42,15 @@ final class Zippopotamus
         $headers->addHeaderLine('Content-Type', 'application/json');
         $http->setHeaders($headers);
 
-        $http->setUri('http://api.zippopotam.us/'
+        $http->setUri(self::$apiUrl
             . urlencode($countryCode) . '/'
             . urlencode($stateCode) . '/'
             . urlencode($city)
-            );
+        );
         $http->setMethod('GET');
 
         $response = $http->send();
-        $json = Json::decode($response->getBody());
+        $json     = Json::decode($response->getBody());
 
         return $json;
     }
@@ -62,11 +64,11 @@ final class Zippopotamus
         $headers->addHeaderLine('Content-Type', 'application/json');
         $http->setHeaders($headers);
 
-        $http->setUri('http://api.zippopotam.us/nearby/' . urlencode($countryCode) . '/' . urlencode($postalCode));
+        $http->setUri(self::$apiUrl . 'nearby/' . urlencode($countryCode) . '/' . urlencode($postalCode));
         $http->setMethod('GET');
 
         $response = $http->send();
-        $json = Json::decode($response->getBody());
+        $json     = Json::decode($response->getBody());
 
         return $json;
     }
